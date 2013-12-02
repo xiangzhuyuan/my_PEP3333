@@ -38,4 +38,3 @@ under Python 3, or type <tt class="docutils literal">str</tt> under Python 2".
 And so, even though HTTP is in some sense "really just bytes", there
 are  many API conveniences to be had by using whatever Python's
 default  <tt class="docutils literal">str</tt> type is.
-
