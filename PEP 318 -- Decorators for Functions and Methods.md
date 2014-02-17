@@ -1,0 +1,21 @@
+Contents
+---
+
+- WarningWarningWarning
+- Abstract
+- Motivation
+- Why Is This So Hard?
+- Background
+- On the name 'Decorator'
+- Design Goals
+- Current Syntax
+- Syntax Alternatives
+- Decorator Location
+- Syntax forms
+- Why @?
+- Current Implementation, History
+- Community Consensus
+- Examples
+- (No longer) Open Issues
+- References
+- Copyright
