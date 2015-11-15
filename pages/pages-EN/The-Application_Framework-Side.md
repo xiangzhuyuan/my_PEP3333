@@ -1,12 +1,23 @@
-## 应用/框架 端
-一个应用对象就是一个可以被调用的对象,这个对象的定义,不应该看做是一个实际的对象实例,一个函数,一个方法,
-类?或者一个有<tt class="docutils literal">__call__</tt>方法的实例,他们都是可以被接受的,作为一个应用对象.
+## [The Application/Framework Side](#id20)
 
-应用对象必须能够调用多次,因为所谓服务器和网关都会被多次调用.
-(注意:虽然我们称之为应用对象,但并不是意味着应用程序开发人员要使用wSGI作为一个web编程的api.但是还是要使用那些个更加高级的
-api,WSGI是一个工具被用来开发server或者框架的人员的使用的.而并非共工程师所用)
+The application object is simply a callable object that accepts
+two arguments.  The term "object" should not be misconstrued as
+requiring an actual object instance: a function, method, class,
+or instance with a <tt class="docutils literal">__call__</tt> method are all acceptable for
+use as an application object.  Application objects must be able
+to be invoked more than once, as virtually all servers/gateways
+(other than CGI) will make such repeated requests.
 
-下面是两个例子,演示了应用对象,一个是一个函数,一个是类!
+(Note: although we refer to it as an "application" object, this
+should not be construed to mean that application developers will use
+WSGI as a web programming API!  It is assumed that application
+developers will continue to use existing, high-level framework
+services to develop their applications.  WSGI is a tool for
+framework and server developers, and is not intended to directly
+support application developers.)
+
+Here are two example application objects; one is a function, and the
+other is a class:
 
 <pre class="literal-block">HELLO_WORLD = b"Hello world!\n"
 

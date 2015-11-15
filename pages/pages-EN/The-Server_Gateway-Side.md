@@ -1,11 +1,15 @@
-# 服务器/网关
+## [The Server/Gateway Side](#id21)
 
-对于每一个请求,服务器或者网关都是会请求一次应用的callable的,为了演示,这里有一个例子,
-CGI网关实现了一个函数,参数里有一个可以调用的应用对象,注意的是,太简单没有错误处理,不顾默认
-的没有被捕捉到的异常会把服务器捕捉到.
+The server or gateway invokes the application callable once for each
+request it receives from an HTTP client, that is directed at the
+application.  To illustrate, here is a simple CGI gateway, implemented
+as a function taking an application object.  Note that this simple
+example has limited error handling, because by default an uncaught
+exception will be dumped to <tt class="docutils literal">sys.stderr</tt> and logged by the web
+server.
 
-<pre class="literal-block">
-import os, sys
+<pre class="literal-block">import os, sys
+
 enc, esc = sys.getfilesystemencoding(), 'surrogateescape'
 
 def unicode_to_wsgi(u):
@@ -64,7 +68,7 @@ def run_with_cgi(application):
 
         # Note: error checking on the headers should happen here,
         # *after* the headers are set.  That way, if an error
-        # oc    curs, start_response can only be re-called with
+        # occurs, start_response can only be re-called with
         # exc_info set.
 
         return write
